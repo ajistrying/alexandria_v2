@@ -1,0 +1,50 @@
+<%#
+TODO: Make necessary links to home and other routes as they come up
+%>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+
+  <div id="navbarBasicExample" class="navbar-menu">
+
+    <div class="navbar-start">
+      <%= link_to "Home", root_path, class: "navbar-item" %>
+      <%= link_to "About", about_path, class: "navbar-item" %>
+      <%= link_to "Contact", contact_path, class: "navbar-item" %>
+      <%# <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            Contact
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Report an issue
+          </a>
+        </div>
+      </div> %>
+
+    </div>
+
+    <div class="navbar-end">
+    <%# TODO: Re add in songs link %>
+      <% link_to "My Songs", class:"navbar-item" %>
+      <a class="navbar-item">
+        My Playlists
+      </a>
+      <div class="navbar-item">
+        
+        <div class="buttons">
+        <% if user_signed_in? %>
+          <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "button is-info is-outlined" %>
+        <% else %>
+        <%= link_to "Sign Up", new_user_registration_path, class: "button is-primary is-outlined" %>
+          <%= link_to "Log In", new_user_session_path, class: "button is-primary is-outlined" %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+</nav>
